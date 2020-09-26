@@ -1,4 +1,5 @@
-# Intermediate Machine Learning with scikit-learn: Cross validation, Parameter Tuning, Pandas Interoperability, and Missing Values
+# Intermediate Machine Learning with scikit-learn
+## Cross validation, Parameter Tuning, Pandas Interoperability, and Missing Values
 
 *By Thomas J. Fan*
 
