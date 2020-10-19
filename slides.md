@@ -2,7 +2,7 @@ title: Intermediate Machine Learning with scikit-learn: Cross validation, Parame
 use_katex: True
 class: title-slide
 
-# Intermediate Machine Learning with scikit-learn:
+# Intermediate Machine Learning with scikit-learn
 ## Cross validation, Parameter Tuning, Pandas Interoperability, and Missing Values
 
 ![](images/scikit-learn-logo-notext.png)
@@ -20,11 +20,25 @@ name: table-of-contents
 class: title-slide, left
 
 # Table of Contents
-
+.g[
+.g-6[
 1. [Cross Validation](#validation)
 1. [Parameter Tuning](#parameter-tuning)
 1. [Pandas Interoperability](#pandas)
 1. [Missing Values](#missing-values)
+]
+.g-6.g-center[
+![](images/scikit-learn-logo-notext.png)
+]
+]
+
+---
+
+# Mini Review Of Scikit-learn API
+
+- estimators
+- regressors/classifiers
+- transformers
 
 ---
 
@@ -33,9 +47,24 @@ class: chapter-slide
 
 # 1. Cross Validation
 
-.footnote-back[
+.footnote[
 [Back to Table of Contents](#table-of-contents)
 ]
+
+???
+
+- Show train test split
+- Show cross validation `cross_val_score`
+- Assuming iid
+- `KFold`
+- `StratifiedKFold`
+- Why Straifed?
+- `LeaveOneOut`
+- `ShuffleSplit`
+- `RepeatedKFold`
+- Grouped data
+- Time series
+- notebook
 
 ---
 
@@ -44,9 +73,16 @@ class: chapter-slide
 
 # 2. Parameter Tuning
 
-.footnote-back[
+.footnote[
 [Back to Table of Contents](#table-of-contents)
 ]
+
+???
+
+- Model complexity
+- Over fitting and underfitting
+- Can overfit the validation set
+- notebook
 
 ---
 
@@ -55,9 +91,16 @@ class: chapter-slide
 
 # 3. Pandas Interoperability
 
-.footnote-back[
+.footnote[
 [Back to Table of Contents](#table-of-contents)
 ]
+
+???
+
+- Introduce heterogenous data
+- categorical encoding
+- column transformer
+- notebook
 
 ---
 
@@ -66,9 +109,16 @@ class: chapter-slide
 
 # 4. Missing Values
 
-.footnote-back[
+.footnote[
 [Back to Table of Contents](#table-of-contents)
 ]
+
+???
+
+- imputers
+- simple ones
+- knn based
+- notebook
 
 ---
 
