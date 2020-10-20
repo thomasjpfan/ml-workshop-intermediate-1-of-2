@@ -50,9 +50,7 @@ class: title-slide, left
 
 ---
 
-# Mini Review Of Scikit-learn API
-
----
+# Scikit-learn API
 
 .center[
 ## `estimator.fit(X, [y])`
@@ -78,7 +76,7 @@ class: title-slide, left
 
 # Data Representation
 
-![](images/data-representation.svg)
+![:scale 80%](images/data-representation.svg)
 
 ---
 
@@ -88,7 +86,7 @@ class: title-slide, left
 
 ---
 
-name: chapter-slide
+class: chapter-slide
 
 # Notebook 📒!
 ## notebooks/00-review-sklearn.ipynb
@@ -108,24 +106,124 @@ class: chapter-slide
 
 # Single train test split
 
+![:scale 70%](images/train-test.svg)
+
+---
+
+# Three Fold Split
+
+![:scale 75%](images/split-data-three.svg)
+
+---
+
+# Why cross validate?
+
+![:scale 80%](notebooks/images/overfitting_validation_set_1.svg)
+
+---
+
+# Why cross validate?
+
+![:scale 80%](notebooks/images/overfitting_validation_set_2.svg)
+
+---
+
+# Can we do better?
+
+![:scale 80%](images/grid_search_cross_validation.png)
+
+---
+
+class: chapter-slide
+
+# Notebook 📓!
+## notebooks/01-cross-validation.ipynb
+
+---
+
+class: chapter-slide
+
+# Cross Validation Strategies
+
+---
+
+![:scale 100%](images/kfold_cv.png)
+
+---
+
+![:scale 100%](images/stratified_cv.png)
+
+---
+
+![:scale 100%](images/shuffle_split_cv.png)
+
+---
+
+![:scale 100%](images/repeated_stratified_kfold.png)
+
+---
+
+# Strategies for increasing the number of folds
+
+- High variance, takes a long time
 ```py
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import LeaveOneOut
 ```
 
-???
+- `ShuffleSplit` with stratification
+```py
+from sklearn.model_selection import StratifiedShuffleSplit
+```
 
-- Show train test split
-- Show cross validation `cross_val_score`
-- Assuming iid
-- `KFold`
-- `StratifiedKFold`
-- Why Straifed?
-- `LeaveOneOut`
-- `ShuffleSplit`
-- `RepeatedKFold`
-- Grouped data
-- Time series
-- notebook
+- Repeat `KFold` or `StratifiedKFold`
+```py
+from sklearn.model_selection import RepeatedKFold
+from sklearn.model_selection import RepeatedStratifiedKFold
+```
+
+---
+
+# Cross-validation with non-idd data
+
+## Grouped data
+
+- Assume data is not iid such as patient ID or user id
+- We want to generalized to a new patient
+
+## Time Series
+
+- Data is correlated
+
+---
+
+![:scale 100%](images/group_kfold.png)
+
+---
+
+![:scale 100%](notebooks/images/approval_ratings.png)
+
+---
+
+![:scale 100%](notebooks/images/approval_ratings_random.png)
+
+---
+
+![:scale 100%](notebooks/images/approval_ratings_structured.png)
+
+---
+
+![:scale 100%](images/time_series_cv.png)
+
+---
+
+![:scale 100%](images/time_series_walk_forward_cv.png)
+
+---
+
+class: chapter-slide
+
+# Notebook 📓!
+## notebooks/01-cross-validation.ipynb
 
 ---
 
