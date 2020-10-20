@@ -36,9 +36,46 @@ class: title-slide, left
 
 # Mini Review Of Scikit-learn API
 
-- estimators
-- regressors/classifiers
-- transformers
+---
+
+.center[
+## `estimator.fit(X, [y])`
+]
+
+.g[
+.g-6[
+## `estimator.predict`
+- Classification
+- Regression
+- Clustering
+]
+.g-6[
+## `estimator.transform`
+- Preprocessing
+- Dimensionality reduction
+- Feature selection
+- Feature extraction
+]
+]
+
+---
+
+# Data Representation
+
+![](images/data-representation.svg)
+
+---
+
+# Supervised ML Workflow
+
+![](images/ml-workflow-sklearn.svg)
+
+---
+
+name: chapter-slide
+
+# Notebook 📒!
+## notebooks/00-review-sklearn.ipynb
 
 ---
 
@@ -47,9 +84,17 @@ class: chapter-slide
 
 # 1. Cross Validation
 
-.footnote[
+.footnote-back[
 [Back to Table of Contents](#table-of-contents)
 ]
+
+---
+
+# Single train test split
+
+```py
+from sklearn.model_selection import train_test_split
+```
 
 ???
 
@@ -73,7 +118,7 @@ class: chapter-slide
 
 # 2. Parameter Tuning
 
-.footnote[
+.footnote-back[
 [Back to Table of Contents](#table-of-contents)
 ]
 
@@ -91,7 +136,7 @@ class: chapter-slide
 
 # 3. Pandas Interoperability
 
-.footnote[
+.footnote-back[
 [Back to Table of Contents](#table-of-contents)
 ]
 
@@ -109,7 +154,7 @@ class: chapter-slide
 
 # 4. Missing Values
 
-.footnote[
+.footnote-back[
 [Back to Table of Contents](#table-of-contents)
 ]
 
