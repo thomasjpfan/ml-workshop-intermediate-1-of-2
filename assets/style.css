@@ -54,10 +54,6 @@ a {
     text-decoration: none;
 }
 
-p, pre {
-  margin: 0.5em 0;
-}
-
 a:hover {
     text-decoration: underline;
 }

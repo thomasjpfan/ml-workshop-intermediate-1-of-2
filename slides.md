@@ -24,8 +24,8 @@ class: title-slide, left
 .g-6[
 1. [Cross Validation](#validation)
 1. [Parameter Tuning](#parameter-tuning)
-1. [Pandas Interoperability](#pandas)
 1. [Missing Values](#missing-values)
+1. [Pandas Interoperability](#pandas)
 ]
 .g-6.g-center[
 ![](images/scikit-learn-logo-notext.png)
@@ -268,23 +268,30 @@ grid.best_params_
 
 ---
 
-# RandomSearchCV
+# Random Search
 
 ![](images/bergstra_random.jpeg)
 
 ---
 
-# Random Search with scikit-learn
+# RandomizedSearchCV with scikit-learn
 
 ```py
-from scipoy.stats import randint
-param_dist = {"max_depth": [3, None],
-              "max_features": randin(1, 11)}
+from scipy.stats import randint
+param_dist = {
+    "max_depth": [3, None],
+    "max_features": randin(1, 11)
+}
 
 random_search = RandomizedSearchCV(
-    clf, param_distributions=param_dist,
-    n_iter=200)
+    clf,
+    param_distributions=param_dist,
+    n_iter=200
+)
 ```
+
+- Values in `param_distributions` can be a list or an object from the
+`scipy.stats` module
 
 ---
 
@@ -295,10 +302,66 @@ class: chapter-slide
 
 ---
 
+name: missing-values
+class: chapter-slide
+
+# 3. Missing Values
+
+.footnote-back[
+[Back to Table of Contents](#table-of-contents)
+]
+
+---
+
+# Imputers in scikit-learn
+
+## Impute module
+
+```py
+from sklearn.impute import SimpleImputer
+from sklearn.impute import KNNImputer
+
+# `add_indicator=True` to add missing indicator
+imputer = SimpleImputer(add_indicator=True)
+
+from sklearn.experimental import enable_iterative_imputer
+from sklearn.impute import IterativeImputer
+```
+
+---
+
+# Comparing the Different methods
+
+![:scale 100%](images/med_knn_rf_comparison.png)
+
+---
+
+# Estimators with native support
+
+## Histogram-based Gradient Boosting Regression Trees
+
+- Based on LightGBM implementation
+- Have native support for missing values
+
+```py
+from sklearn.experimental import enable_hist_gradient_boosting
+from sklearn.ensemble import HistGradientBoostingClassifier
+from sklearn.ensemble import HistGradientBoostingRegressor
+```
+
+---
+
+class: chapter-slide
+
+# Notebook 📔!
+## notebooks/03-missing-values.ipynb
+
+---
+
 name: pandas
 class: chapter-slide
 
-# 3. Pandas Interoperability
+# 4. Pandas Interoperability
 
 .footnote-back[
 [Back to Table of Contents](#table-of-contents)
@@ -313,24 +376,6 @@ class: chapter-slide
 
 ---
 
-name: missing-values
-class: chapter-slide
-
-# 4. Missing Values
-
-.footnote-back[
-[Back to Table of Contents](#table-of-contents)
-]
-
-???
-
-- imputers
-- simple ones
-- knn based
-- notebook
-
----
-
 class: title-slide, left
 
 # Closing
@@ -340,8 +385,8 @@ class: title-slide, left
 ![:scale 30%](images/scikit-learn-logo-notext.png)
 1. [Cross Validation](#validation)
 1. [Parameter Tuning](#parameter-tuning)
-1. [Pandas Interoperability](#pandas)
 1. [Missing Values](#missing-values)
+1. [Pandas Interoperability](#pandas)
 ]
 .g-5.center[
 <br>
