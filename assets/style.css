@@ -43,7 +43,7 @@ body {
 }
 
 .remark-slide-content {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 
@@ -52,6 +52,10 @@ body {
 a {
     color: #008000;
     text-decoration: none;
+}
+
+p, pre {
+  margin: 0.5em 0;
 }
 
 a:hover {

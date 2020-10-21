@@ -220,12 +220,78 @@ class: chapter-slide
 [Back to Table of Contents](#table-of-contents)
 ]
 
-???
+---
 
-- Model complexity
-- Over fitting and underfitting
-- Can overfit the validation set
-- notebook
+class: center
+
+# What Tune Parameters?
+
+![](notebooks/images/knn_boundary_n_neighbors.png)
+
+---
+
+# Score vs n_neighbors
+
+![](notebooks/images/knn_model_complexity.png)
+
+---
+
+# Parameter Tuning Workflow
+
+![:scale 80%](images/gridsearch_workflow.png)
+
+---
+
+# GridSearchCV
+
+```py
+from sklearn.model_selection import GridSearchCV
+
+param_grid = {'n_neighbors': np.arange(1, 30, 2)}
+grid = GridSearchCV(KNeighborsClassifier(), param_grid=param_grid,
+                    return_train_score=True)
+
+grid.fit(X_train, y_train)
+```
+
+Best score
+
+```py
+grid.best_score_
+```
+
+Best parameters
+
+```py
+grid.best_params_
+```
+
+---
+
+# RandomSearchCV
+
+![](images/bergstra_random.jpeg)
+
+---
+
+# Random Search with scikit-learn
+
+```py
+from scipoy.stats import randint
+param_dist = {"max_depth": [3, None],
+              "max_features": randin(1, 11)}
+
+random_search = RandomizedSearchCV(
+    clf, param_distributions=param_dist,
+    n_iter=200)
+```
+
+---
+
+class: chapter-slide
+
+# Notebook 📓!
+## notebooks/02-parameter-tuning.ipynb
 
 ---
 
