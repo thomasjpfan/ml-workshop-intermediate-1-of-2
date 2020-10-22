@@ -383,12 +383,118 @@ class: chapter-slide
 [Back to Table of Contents](#table-of-contents)
 ]
 
-???
+---
 
-- Introduce heterogenous data
-- categorical encoding
-- column transformer
-- notebook
+# Categorical Data
+
+## Examples of categories:
+
+- `['Manhattan', 'Queens', 'Brooklyn', 'Bronx']`
+- `['dog', 'cat', 'mouse']`
+
+## Scikit-learn Encoders
+
+```py
+from sklearn.preprocessing import OrdinalEncoder
+```
+- Encodes categories into an integer
+
+```py
+from sklearn.preprocessing import OneHotEncoder
+```
+- Binary column for each category
+
+---
+
+# Heterogenous data
+
+## Example: Titanic Dataset
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pclass</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>sibsp</th>
+      <th>parch</th>
+      <th>fare</th>
+      <th>embarked</th>
+      <th>body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>female</td>
+      <td>29.0000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>211.3375</td>
+      <td>S</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>male</td>
+      <td>0.9167</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>151.5500</td>
+      <td>S</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>female</td>
+      <td>2.0000</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>151.5500</td>
+      <td>S</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>male</td>
+      <td>30.0000</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>151.5500</td>
+      <td>S</td>
+      <td>135.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0</td>
+      <td>female</td>
+      <td>25.0000</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>151.5500</td>
+      <td>S</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+# scikit-learn's ColumnTransformer
+
+![:scale 100%](images/column_transformer_schematic.png)
+
+---
+
+class: chapter-slide
+
+# Notebook 📔!
+## notebooks/04-pandas-interoperability.ipynb
 
 ---
 
