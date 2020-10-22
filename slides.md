@@ -131,19 +131,19 @@ class: chapter-slide
 
 ---
 
-![:scale 100%](images/kfold_cv.png)
+![:scale 90%](images/kfold_cv.png)
 
 ---
 
-![:scale 100%](images/stratified_cv.png)
+![:scale 90%](images/stratified_cv.png)
 
 ---
 
-![:scale 100%](images/shuffle_split_cv.png)
+![:scale 90%](images/shuffle_split_cv.png)
 
 ---
 
-![:scale 100%](images/repeated_stratified_kfold.png)
+![:scale 90%](images/repeated_stratified_kfold.png)
 
 ---
 
@@ -180,27 +180,27 @@ from sklearn.model_selection import RepeatedStratifiedKFold
 
 ---
 
-![:scale 100%](images/group_kfold.png)
+![:scale 90%](images/group_kfold.png)
 
 ---
 
-![:scale 100%](notebooks/images/approval_ratings.png)
+![:scale 90%](notebooks/images/approval_ratings.png)
 
 ---
 
-![:scale 100%](notebooks/images/approval_ratings_random.png)
+![:scale 90%](notebooks/images/approval_ratings_random.png)
 
 ---
 
-![:scale 100%](notebooks/images/approval_ratings_structured.png)
+![:scale 90%](notebooks/images/approval_ratings_structured.png)
 
 ---
 
-![:scale 100%](images/time_series_cv.png)
+![:scale 90%](images/time_series_cv.png)
 
 ---
 
-![:scale 100%](images/time_series_walk_forward_cv.png)
+![:scale 90%](images/time_series_walk_forward_cv.png)
 
 ---
 
@@ -226,13 +226,13 @@ class: center
 
 # What Tune Parameters?
 
-![](notebooks/images/knn_boundary_n_neighbors.png)
+![:scale 50%](notebooks/images/knn_boundary_n_neighbors.png)
 
 ---
 
 # Score vs n_neighbors
 
-![](notebooks/images/knn_model_complexity.png)
+![:scale 80%](notebooks/images/knn_model_complexity.png)
 
 ---
 
