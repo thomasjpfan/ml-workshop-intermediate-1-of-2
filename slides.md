@@ -378,15 +378,15 @@ class: chapter-slide
 
 ## Scikit-learn Encoders
 
+`OrdinalEncoder`: Encodes categories into an integer
 ```py
 from sklearn.preprocessing import OrdinalEncoder
 ```
-- Encodes categories into an integer
 
+`OneHotEncoder`: Encodes categories into an integer
 ```py
 from sklearn.preprocessing import OneHotEncoder
 ```
-- Binary column for each category
 
 ---
 
