@@ -15,7 +15,7 @@ random_search_rf = RandomizedSearchCV(
 
 random_search_rf.fit(X_train, y_train)
 
-random_searchcv.score(X_test, y_test)
+random_search_rf.score(X_test, y_test)
 
 from sklearn.svm import SVC
 

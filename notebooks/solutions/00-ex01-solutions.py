@@ -1,5 +1,5 @@
 import numpy as np
-from sklearn.linear_model import Ridge
+from sklearn.linear_model import LogisticRegression
 from sklearn.datasets import load_breast_cancer
 
 cancer = load_breast_cancer()
