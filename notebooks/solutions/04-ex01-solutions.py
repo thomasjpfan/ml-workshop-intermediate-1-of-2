@@ -4,43 +4,30 @@ X, y = ames.data, ames.target
 
 X.shape
 
-y.iloc[:10]
+cat_cols = X.select_dtypes(include='category').columns
 
-categorical_features = X.select_dtypes(include='category').columns
+num_cols = X.select_dtypes(include='number').columns
 
-numerical_features = X.select_dtypes(include='number').columns
+cat_cols.shape
 
-len(categorical_features)
-
-len(numerical_features)
-
-cat_prep = Pipeline([
-    ('imputer', SimpleImputer(strategy='constant', fill_value='sk_missing')),
-    ('ohe', OneHotEncoder(handle_unknown='ignore', sparse=False))
-])
-
-ct = ColumnTransformer([
-    ('numerical', 'passthrough', numerical_features),
-    ('categorical', cat_prep, categorical_features)
-])
-
-from sklearn.model_selection import train_test_split
+num_cols.shape
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, random_state=42)
+    X, y, random_state=0)
 
 from sklearn.experimental import enable_hist_gradient_boosting
 from sklearn.ensemble import HistGradientBoostingRegressor
 
-hist = Pipeline([
-    ('prep', ct),
-    ('estimator', HistGradientBoostingRegressor(random_state=42))
+preprocess = ColumnTransformer([
+    ('categorical', OneHotEncoder(handle_unknown='ignore', sparse=False), cat_cols),
+    ('numerical', 'passthrough', num_cols)
 ])
-hist
 
-%%time
+hist = Pipeline([
+    ('preprocess', preprocess),
+    ('regressor', HistGradientBoostingRegressor(random_state=0))
+])
+
 hist.fit(X_train, y_train)
-
-hist.score(X_train, y_train)
 
 hist.score(X_test, y_test)

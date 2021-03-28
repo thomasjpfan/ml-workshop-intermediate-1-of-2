@@ -6,35 +6,30 @@ print(cancer.DESCR)
 
 X, y = cancer.data, cancer.target
 
-X.isnull().sum()
-
 X.shape
 
+X.isna().sum()
+
 imputer = SimpleImputer(add_indicator=True)
-X_trans = imputer.fit_transform(X)
+X_imputed = imputer.fit_transform(X)
 
-X_trans.shape
+X_imputed.shape
 
-# Check that the 1's correspond to rows with a missing Bare_Nuclei
-X.loc[X['Bare_Nuclei'].isna()].index
-
-np.flatnonzero(X_trans[:, -1] == 1)
-
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, random_state=42, stratify=y
 )
 
-pipe = Pipeline([
-    ('impute', SimpleImputer(add_indicator=True)),
-    ('scale', StandardScaler()),
-    ('log_reg', LogisticRegression())
-])
+log_reg = make_pipeline(
+    SimpleImputer(add_indicator=True),
+    StandardScaler(),
+    LogisticRegression(random_state=0)
+)
 
-pipe.fit(X_train, y_train)
+log_reg.fit(X_train, y_train)
 
-pipe.score(X_test, y_test)
+log_reg.score(X_test, y_test)

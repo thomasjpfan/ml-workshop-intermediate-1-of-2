@@ -1,10 +1,11 @@
 from sklearn.model_selection import cross_validate
+
+results = cross_validate(log_reg, X_train, y_train, cv=4)
+results
+
 import pandas as pd
+pd.DataFrame(results)
 
-metrics = cross_validate(log_reg, X_train, y_train, cv=4)
+more_results = cross_validate(log_reg, X_train, y_train, cv=4, scoring=["f1", "accuracy"])
 
-pd.DataFrame(metrics)
-
-extra_metrics = cross_validate(log_reg, X_train, y_train, cv=4, scoring=['f1_macro', 'accuracy'])
-
-pd.DataFrame(extra_metrics)
+pd.DataFrame(more_results)

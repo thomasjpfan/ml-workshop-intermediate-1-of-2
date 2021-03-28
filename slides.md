@@ -159,7 +159,7 @@ from sklearn.model_selection import LeaveOneOut
 from sklearn.model_selection import StratifiedShuffleSplit
 ```
 
-- Repeat `KFold` or `StratifiedKFold`
+- `RepeatKFold` or `StratifiedKFold`
 ```py
 from sklearn.model_selection import RepeatedKFold
 from sklearn.model_selection import RepeatedStratifiedKFold
