@@ -57,9 +57,9 @@ jupyter lab
 
 This should open a browser window with the `jupterlab` interface.
 
-### Run with Google's Colaboratory
+### Run with Google's Colab
 
-If you have any issues with installing `conda` or running `jupyter` on your local computer, then you can run the notebooks on Google's Colaboratory:
+If you have any issues with installing `conda` or running `jupyter` on your local computer, then you can run the notebooks on Google's Colab:
 
 0. [Quick Review of scikit-learn](https://colab.research.google.com/github/thomasjpfan/ml-workshop-intermediate-1-of-2/blob/master/notebooks/00-review-sklearn.ipynb)
 1. [Cross-Validation in scikit-learn](https://colab.research.google.com/github/thomasjpfan/ml-workshop-intermediate-1-of-2/blob/master/notebooks/01-cross-validation.ipynb)
