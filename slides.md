@@ -279,19 +279,40 @@ grid.best_params_
 ```py
 from scipy.stats import randint
 param_dist = {
-    "max_depth": [3, None],
-    "max_features": randin(1, 11)
+    "max_depth": randint(3, 9),
+    "max_features": randint(1, 11)
 }
 
 random_search = RandomizedSearchCV(
     clf,
     param_distributions=param_dist,
-    n_iter=200
+    n_iter=20
 )
 ```
 
 - Values in `param_distributions` can be a list or an object from the
 `scipy.stats` module
+
+---
+
+# Successive Halving
+
+```python
+from sklearn.experimental import enable_halving_search_cv  # noqa
+
+from sklearn.model_selection import HalvingRandomSearchCV
+from sklearn.model_selection import HalvingGridSearchCV
+```
+
+???
+
+The search strategy starts evaluating all the candidates with a small amount of resources and iteratively selects the best candidates, using more and more resources.
+
+---
+
+class: center
+
+![:scale 90%](notebooks/images/halvingcv.svg)
 
 ---
 
