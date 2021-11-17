@@ -10,5 +10,5 @@ dummy_scores.mean()
 knc_scores = cross_val_score(knc, X_train, y_train, scoring="roc_auc")
 knc_scores.mean()
 
-rf_scores = cross_val_score(rf, X_train, y_train, scoring="roc_auc")
-rf_scores.mean()
+log_reg_scores = cross_val_score(log_reg, X_train, y_train, scoring="roc_auc")
+log_reg_scores.mean()
