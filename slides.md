@@ -131,19 +131,19 @@ class: chapter-slide
 
 ---
 
-![:scale 90%](images/kfold_cv.png)
+![:scale 90%](notebooks/images/kfold_cv.svg)
 
 ---
 
-![:scale 90%](images/stratified_cv.png)
+![:scale 90%](notebooks/images/stratified_cv.svg)
 
 ---
 
-![:scale 90%](images/shuffle_split_cv.png)
+![:scale 90%](notebooks/images/shuffle_split_cv.svg)
 
 ---
 
-![:scale 90%](images/repeated_stratified_kfold.png)
+![:scale 90%](notebooks/images/repeated_stratified_kfold.svg)
 
 ---
 
@@ -159,7 +159,7 @@ from sklearn.model_selection import LeaveOneOut
 from sklearn.model_selection import StratifiedShuffleSplit
 ```
 
-- `RepeatKFold` or `StratifiedKFold`
+- `RepeatKFold` or `RepeatedStratifiedKFold`
 ```py
 from sklearn.model_selection import RepeatedKFold
 from sklearn.model_selection import RepeatedStratifiedKFold
@@ -180,7 +180,7 @@ from sklearn.model_selection import RepeatedStratifiedKFold
 
 ---
 
-![:scale 90%](images/group_kfold.png)
+![:scale 90%](notebooks/images/group_kfold.svg)
 
 ---
 
@@ -196,11 +196,11 @@ from sklearn.model_selection import RepeatedStratifiedKFold
 
 ---
 
-![:scale 90%](images/time_series_cv.png)
+![:scale 90%](notebooks/images/time_series_cv.svg)
 
 ---
 
-![:scale 90%](images/time_series_walk_forward_cv.png)
+![:scale 90%](notebooks/images/time_series_walk_forward_cv.svg)
 
 ---
 
@@ -224,7 +224,7 @@ class: chapter-slide
 
 class: center
 
-# What Tune Parameters?
+# Why Tune Parameters?
 
 ![:scale 50%](notebooks/images/knn_boundary_n_neighbors.png)
 
