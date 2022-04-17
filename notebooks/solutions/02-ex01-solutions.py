@@ -10,25 +10,24 @@ param_dist = {
     "min_samples_split": randint(2, 11)
 }
 
-random_search_cv = RandomizedSearchCV(
-    RandomForestClassifier(random_state=42),
-    param_distributions=param_dist,
-    n_iter=20,
-    verbose=1,
-    n_jobs=2,
-)
+search_cv = RandomizedSearchCV(RandomForestClassifier(random_state=0),
+                               param_distributions=param_dist, n_iter=20, verbose=1, n_jobs=8, random_state=0)
 
-random_search_cv.fit(X_train, y_train)
+search_cv.fit(X_train, y_train)
 
-random_search_cv.best_params_
+search_cv.best_params_
 
-random_search_cv.score(X_test, y_test)
+search_cv.best_score_
 
-rsh = HalvingRandomSearchCV(
-    estimator=RandomForestClassifier(random_state=42), param_distributions=param_dist, random_state=42,
-    n_jobs=2, verbose=1
-)
+search_cv.score(X_test, y_test)
 
-rsh.fit(X_train, y_train)
+half_cv = HalvingRandomSearchCV(RandomForestClassifier(random_state=0),
+                                param_distributions=param_dist, verbose=1, n_jobs=8, random_state=0)
 
-rsh.score(X_test, y_test)
+half_cv.fit(X_train, y_train)
+
+half_cv.best_params_
+
+half_cv.best_score_
+
+half_cv.score(X_test, y_test)
